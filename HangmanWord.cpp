@@ -41,20 +41,3 @@ int HangmanWord::checkWord(char guessedChar){
 
     return match;
 }
-
-void HangmanWord::resetGuessed(){
-    int neededToGuess = 0;
-    int len = word.length();
-
-    guessedWord = word;
-    for(int i = 0; i < len; i++){
-        if(word.at(i) == ' ')
-            guessedWord.at(i) = ' ';
-
-        else{
-            guessedWord.at(i) = '_';
-            neededToGuess++;
-        }
-    }
-    charsToGuess = neededToGuess;
-}
