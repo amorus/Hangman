@@ -4,7 +4,6 @@
 
 #include "Game.h"
 
-
 void Game::Play(){
     char ch;
     std::string temp;
