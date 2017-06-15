@@ -40,8 +40,6 @@ void Game::Play(){
         else{
             std::cout << "You win!" << std::endl;
         }
-        getWords()->at(getRandomizedWord()).resetGuessed();
-        setLives(6);
     }
 
 void Game::randomize(){
