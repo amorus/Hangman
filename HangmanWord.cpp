@@ -9,7 +9,8 @@ HangmanWord::HangmanWord(std::string inputWord, std::string inputCat){
     int len = word.length();
 
     guessedWord = word;
-    for(int i = 0; i < len; i++){
+    guessedWord.at(0) = word.at(0);
+    for(int i = 1; i < len; i++){
         if(word.at(i) == ' ')
             guessedWord.at(i) = ' ';
 
@@ -28,7 +29,6 @@ int HangmanWord::checkWord(char guessedChar){
         || std::find(guessedChars.begin(), guessedChars.end(), guessedChar-32) != guessedChars.end()
         || std::find(guessedChars.begin(), guessedChars.end(), guessedChar+32) != guessedChars.end()){
 
-        std::cout << "You already tried that" << std::endl;
         return -1;
     }
     for(int i = 0; i < len; i++){
@@ -40,4 +40,21 @@ int HangmanWord::checkWord(char guessedChar){
     }
 
     return match;
+}
+
+void HangmanWord::resetGuessed(){
+    int neededToGuess = 0;
+    int len = word.length();
+
+    guessedWord = word;
+    for(int i = 0; i < len; i++){
+        if(word.at(i) == ' ')
+            guessedWord.at(i) = ' ';
+
+        else{
+            guessedWord.at(i) = '_';
+            neededToGuess++;
+        }
+    }
+    charsToGuess = neededToGuess;
 }

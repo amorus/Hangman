@@ -37,6 +37,8 @@ public:
     //display the guessed word so far
     void writeGuessed() { std::cout << guessedWord << std::endl << std::endl; }
 
+    void resetGuessed();
+
     HangmanWord(std::string inputWord, std::string inputCat);
 };
 

@@ -15,7 +15,7 @@ int Menu::displayCategories()
 {
     std::ifstream readFile("Categories.dat");
     std::string category;
-
+    system("cls||clear");
     std::cout << "All available categories are: " << std::endl << "-----------------------------------" << std::endl;
 
     if(!readFile){
@@ -44,7 +44,7 @@ void Menu::addWord(){
 
     std::ofstream writeWord("Words.dat", std::ios::app);
     std::ifstream readCategory("Categories.dat");
-
+    system("cls||clear");
     std::cout << "-----------------------------------" << std::endl;
     std::cout << "Enter category of word to add(can't be space seperated): ";
     std::cin >> category;
@@ -53,6 +53,7 @@ void Menu::addWord(){
 
     std::cout << "Enter word to add(CAN be space seperated): ";
     std::getline(std::cin, word);
+    std::cout << std::endl << "Word" << word << "has been added in category " << category << std::endl;
     std::cout << "-----------------------------------" << std::endl;
 
     while(readCategory >> tempCategory){
